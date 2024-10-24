@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background: url('/static/images/background-image.jpg') no-repeat center center fixed;
+    background: url('/static/images/homepage.jpg') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #000000;
@@ -76,7 +76,7 @@ body {
 
 
 .text-brown {
-    color: rgba(165, 42, 42, 0.288) !important;
+    color: #451f0c !important;
 }
 
 .text-black {
