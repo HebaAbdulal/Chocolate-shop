@@ -54,16 +54,16 @@
         <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <img class="logo-img" src="{% static 'images/logo.jpg' %}" alt="DH Bakes logo">
+                    <img class="logo-img" src="{% static 'images/logo.png' %}" alt="Sweet Bite logo">
                 </a>
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
-                        <input id="search-treats" class="form-control border border-pink rounded-1" type="text" name="q" placeholder="Search for tasty treats" aria-label="Search for tasty treats">
+                        <input id="search-treats" class="form-control border border-brown rounded-1" type="text" name="q" placeholder="Search for tasty chocolates" aria-label="Search for tasty chocolates">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-pink border border-pink rounded-1" type="submit">
-                                <span class="icon">
+                            <button class="form-control btn btn-brown border border-brown rounded-1" type="submit">
+                                <span class="icon btn-brown">
                                     <i class="fas fa-search"></i>
                                 </span>
                             </button>
@@ -74,8 +74,8 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <a class="text-pink nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="text-center">
+                        <a class="text-brown nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center text-brown">
                                 <div><i class="fas fa-user fa-lg"></i></div>
                                 <p class="my-0">My Account</p>
                             </div>
@@ -83,21 +83,22 @@
                         <div id="account" class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Product Management</a>
+                                    <a href="" class="dropdown-item text-brown">Product Management</a>
                                 {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                <a href="" class="dropdown-item text-brown">My Profile</a>
+                                <a href="" class="dropdown-item text-brown">My Wishlist</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item text-brown">Logout</a>
                             {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                                <a href="{% url 'account_signup' %}" class="dropdown-item text-brown">Register</a>
+                                <a href="{% url 'account_login' %}" class="dropdown-item text-brown">Login</a>
                             {% endif %}
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-pink{% endif %} nav-link" href="">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-pink{% endif %} nav-link text-brown" href="">
                             <div class="text-center">
-                                <div><i class="text-pink fas fa-bag-shopping fa-lg"></i></div>
-                                <p class="my-0 text-pink">
+                                <div><i class="text-brown fas fa-bag-shopping fa-lg"></i></div>
+                                <p class="my-0 text-brown">
                                     {% if grand_total %}
                                         £{{ grand_total|floatformat:2 }}
                                     {% else %}

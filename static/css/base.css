@@ -43,23 +43,23 @@ body {
 }
 
 .shop-now-button {
-    background: rgba(165, 42, 42, 0.288);
+    background: #2f0408bf;
     color: rgb(255, 255, 255);
 }
 
 .btn-brown {
-    background: rgba(233, 134, 134, 0.377);
-    color: white;
+    background: white;
+    color: #2f0408bf;
 }
 
 
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus,
-.btn-pink:hover,
-.btn-pink:active,
-.btn-pink:focus {
-    background: rgba(165, 42, 42, 0.288);
+.btn-brown:hover,
+.btn-brown:active,
+.btn-brown:focus {
+    background: #2f0408bf;
     color: white;
 }
 
@@ -84,10 +84,10 @@ body {
 }
 
 .border-brown {
-    border: 1px solid rgba(165, 42, 42, 0.288) !important;
+    border: 1px solid #2f0408bf !important;
 }
 
-.about {
+.font-size {
     font-size: 180%;
 }
 
@@ -117,7 +117,7 @@ body {
 /* Main Nav */
 
 .nav-hover:hover {
-    text-decoration: underline rgba(233, 134, 134, 0.377);
+    text-decoration: underline #2f0408bf;
 }
 
 #account a {
@@ -324,7 +324,7 @@ footer {
 
 #mc_embed_signup .button {
     clear: both;
-    background-color: #AB0368 !important;
+    background-color: #2f0408bf!important;
     border-radius: 4px;
     transition: all 0.23s ease-in-out 0s;
     color: #FFFFFF;
