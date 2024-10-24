@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "name": "Classic Chocolates",
+        "description": "Traditional chocolate flavors that everyone loves."
+    },
+    {
+        "id": 2,
+        "name": "Flavoured Chocolates",
+        "description": "Delicious chocolates infused with unique flavors."
+    },
+    {
+        "id": 3,
+        "name": "Diet Chocolates",
+        "description": "Health-conscious chocolates that don’t compromise on taste."
+    },
+    {
+        "id": 4,
+        "name": "Gifts",
+        "description": "Beautifully packaged chocolates perfect for gifting."
+    },
+    {
+        "id": 5,
+        "name": "Build Your Own",
+        "description": "Customize your own chocolate mix."
+    }
+]
