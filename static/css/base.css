@@ -79,6 +79,10 @@ body {
     color: #451f0c !important;
 }
 
+.bg-color {
+    background-color: #451f0c !important;
+}
+
 .text-black {
     color: black;
 }
@@ -89,6 +93,10 @@ body {
 
 .font-size {
     font-size: 180%;
+}
+
+.text-offwhite {
+    color: rgb(247, 241, 228);
 }
 
 .main-div {
@@ -153,9 +161,9 @@ body {
 
 /* Product Images */
 
-.fixed-img-size {
-    width: 380px;
-    height: 260px
+.fixed-size {
+    width: 320px;
+    height: 240px
 }
 
 .product-img-hover:hover {

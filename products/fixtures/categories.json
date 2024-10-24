@@ -1,27 +1,37 @@
 [
     {
-        "id": 1,
-        "name": "Classic Chocolates",
-        "description": "Traditional chocolate flavors that everyone loves."
+        "model": "products.category",
+        "pk": 1,
+        "fields": {
+            "name": "Classic Chocolates"
+        }
     },
     {
-        "id": 2,
-        "name": "Flavoured Chocolates",
-        "description": "Delicious chocolates infused with unique flavors."
+        "model": "products.category",
+        "pk": 2,
+        "fields": {
+            "name": "Flavoured Chocolates"
+        }
     },
     {
-        "id": 3,
-        "name": "Diet Chocolates",
-        "description": "Health-conscious chocolates that don’t compromise on taste."
+        "model": "products.category",
+        "pk": 3,
+        "fields": {
+            "name": "Diet Chocolates"
+        }
     },
     {
-        "id": 4,
-        "name": "Gifts",
-        "description": "Beautifully packaged chocolates perfect for gifting."
+        "model": "products.category",
+        "pk": 4,
+        "fields": {
+            "name": "Gifts"
+        }
     },
     {
-        "id": 5,
-        "name": "Build Your Own",
-        "description": "Customize your own chocolate mix."
+        "model": "products.category",
+        "pk": 5,
+        "fields": {
+            "name": "Build Your Own"
+        }
     }
 ]
