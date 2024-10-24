@@ -1,0 +1,92 @@
+
+<div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav w-auto mx-auto">
+        <li class="nav-item d-block d-lg-none">
+            <a class="logo-font font-weight-bold nav-link text-brown mr-4 nav-hover" href="{% url 'home' %}" id="home-link">
+                Home
+            </a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-brown mr-4 nav-hover" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All Products
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
+                <a href="{% url 'products' %}" class="dropdown-item">All Chocolates</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-brown mr-4 nav-hover" href="#" id="classic-chocolates-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Classic Chocolates
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="classic-chocolates-link">
+                <a href="{% url 'products' %}?category=dark_chocolates" class="dropdown-item">Dark Chocolates</a>
+                <a href="{% url 'products' %}?category=milk_chocolates" class="dropdown-item">Milk Chocolates</a>
+                <a href="{% url 'products' %}?category=white_chocolates" class="dropdown-item">White Chocolates</a>
+                <a href="{% url 'products' %}?category=ruby_chocolates" class="dropdown-item">Ruby Chocolates</a>
+                <a href="{% url 'products' %}?category=dark_chocolates,milk_chocolates,white_chocolates,ruby_chocolates" class="dropdown-item">All Classic Chocolates</a>
+                
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-brown mr-4 nav-hover" href="#" id="flavoured-chocolates-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Flavoured Chocolates
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="flavoured-chocolates-link">
+                <a href="{% url 'products' %}?category=fruity_chocolates" class="dropdown-item">Fruity Chocolates</a>
+                <a href="{% url 'products' %}?category=nutty_chocolates" class="dropdown-item">Nutty Chocolates</a>
+                <a href="{% url 'products' %}?category=caramel_toffee_chocolates" class="dropdown-item">Caramel & Toffee Chocolates</a>
+                <a href="{% url 'products' %}?category=mint_herbal_chocolates" class="dropdown-item">Mint & Herbal Chocolates</a>
+                <a href="{% url 'products' %}?category=fruity_chocolates,nutty_chocolates,caramel_toffee_chocolates,mint_herbal_chocolates" class="dropdown-item">All Flavoured Chocolates</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-brown mr-4 nav-hover" href="#" id="diet-chocolates-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Diet Chocolates
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="diet-chocolates-link">
+                <a href="{% url 'products' %}?category=vegan_chocolates" class="dropdown-item">Vegan Chocolates</a>
+                <a href="{% url 'products' %}?category=sugar_free_chocolates" class="dropdown-item">Sugar Free Chocolates</a>
+                <a href="{% url 'products' %}?category=gluten_free_chocolates" class="dropdown-item">Gluten Free Chocolates</a>
+                <a href="{% url 'products' %}?category=vegan_chocolates,sugar_free_chocolatesm,gluten_free_chocolates" class="dropdown-item">All Diet Chocolates</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-brown mr-4 nav-hover" href="#" id="gifts-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Gifts
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="gifts-link">
+                <a href="{% url 'products' %}?category=gifts_hampers" class="dropdown-item">Gift & Hampers</a>
+                <a href="{% url 'products' %}?category=birthday" class="dropdown-item">Birthday</a>
+                <a href="{% url 'products' %}?category=valentin's_day" class="dropdown-item">Valentine's Day</a>
+                <a href="{% url 'products' %}?category=corporate_gifts" class="dropdown-item">Corporate Gifts</a>
+                <a href="{% url 'products' %}?category=gifts_hampers,birthday,corporate_giftsvalentin's_day" class="dropdown-item">All Gifts</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-brown mr-4 nav-hover" href="#" id="build-your-own-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Build Your Own
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="build-your-own-link">
+                <a href="{% url 'products' %}" class="dropdown-item">Custom Boxes</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-brown mr-4 nav-hover" href="#" id="info-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Info
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="info-link">
+                <a href="{% url 'contact' %}" class="dropdown-item">Contact Us</a>
+                <a href="{% url 'faq:faq_list' %}" class="dropdown-item">FAQ's</a>
+            </div>
+        </li>
+    </ul>
+</div>
