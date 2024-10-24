@@ -1,0 +1,469 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/static/images/background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #000000;
+    font-family: "Merriweather:ital", serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* from Bulma */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.logo-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.text-bg {
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255, 0.8);
+}
+
+.text-large {
+    font-size: large;
+}
+
+.shop-now-button {
+    background: rgba(165, 42, 42, 0.288);
+    color: rgb(255, 255, 255);
+}
+
+.btn-brown {
+    background: rgba(233, 134, 134, 0.377);
+    color: white;
+}
+
+
+.shop-now-button:hover,
+.shop-now-button:active,
+.shop-now-button:focus,
+.btn-pink:hover,
+.btn-pink:active,
+.btn-pink:focus {
+    background: rgba(165, 42, 42, 0.288);
+    color: white;
+}
+
+.pd-btn {
+    background-color: #ffffff;
+    color: rgba(233, 134, 134, 0.377);
+}
+
+.pd-btn:hover {
+    background-color: rgba(233, 134, 134, 0.377);
+    color: #ffffff;
+}
+
+
+
+.text-brown {
+    color: rgba(165, 42, 42, 0.288) !important;
+}
+
+.text-black {
+    color: black;
+}
+
+.border-brown {
+    border: 1px solid rgba(165, 42, 42, 0.288) !important;
+}
+
+.about {
+    font-size: 180%;
+}
+
+.main-div {
+    max-width: 80%;
+}
+
+.btt-button {
+    color: rgba(233, 134, 134, 0.377);
+    height: 42px;
+    width: 42px;
+    
+}
+
+.btt-button:hover {
+    color: #ffffff;
+    background-color: rgba(233, 134, 134, 0.377);
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+
+/* Main Nav */
+
+.nav-hover:hover {
+    text-decoration: underline rgba(233, 134, 134, 0.377);
+}
+
+#account a {
+    color: rgba(233, 134, 134, 0.377);
+}
+
+#main-nav a {
+    color: rgba(233, 134, 134, 0.377);
+}
+
+/* Mobile nav icon style */ 
+
+.mobile-nav {
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 10px;
+}
+
+/* BG Overlay */
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: white;
+    z-index: -1;
+}
+
+/* Product Images */
+
+.fixed-img-size {
+    width: 380px;
+    height: 260px
+}
+
+.product-img-hover:hover {
+    border: 1px solid rgba(165, 42, 42, 0.288);
+}
+
+/* Product Detail */
+
+.product-name {
+    font-size: larger;
+}
+
+.product-price {
+    font-size: large;
+}
+
+.shadow {
+    box-shadow: 5px 5px 5px;
+}
+
+/* Product management */ 
+
+.edit-products {
+    max-height: 550px;
+    overflow-y: auto;
+}
+
+/* Messages */ 
+
+.message-container {
+    position: fixed;
+    top: 92px;
+    right: 15px;
+    z-index: 999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+    font-size: large;
+}
+
+.toast-capper {
+    height: 3px;
+}
+
+/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent; 
+    border-bottom: 10px solid black;
+    position: absolute;
+    top: -10px;
+    right: 36px;
+}
+
+/* Convenience classes - colors copied from Bootstrap */
+.arrow-primary {
+    border-bottom-color: #007bff !important;
+}
+
+.arrow-secondary {
+    border-bottom-color: #6c757d !important;
+}
+
+.arrow-success {
+    border-bottom-color: #28a745 !important;
+}
+
+.arrow-danger {
+    border-bottom-color: #dc3545 !important;
+}
+
+.arrow-warning {
+    border-bottom-color: #ffc107 !important;
+}
+
+.arrow-info {
+    border-bottom-color: #17a2b8 !important;
+}
+
+.arrow-light {
+    border-bottom-color: #f8f9fa !important;
+}
+
+.arrow-dark {
+    border-bottom-color: #343a40 !important;
+}
+
+.bag-notification-wrapper {
+    height: 100px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* Footer */
+
+footer {
+    flex-shrink: 0;
+}
+
+.footer-bg {
+    background-color: rgb(255, 253, 253);
+    box-shadow: 1px -1px 5px 0 rgba(165, 42, 42, 0.288);
+}
+
+
+#social-media {
+    text-align: center;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    gap: 30px;
+}
+
+#social-media i {
+    font-size: 160%;
+    padding: 5%;
+    color: rgb(247, 241, 228);
+    transition-duration: 0.5s;
+}
+
+#social-media i:hover {
+    color: rgb(247, 241, 228);
+}
+
+.copyright {
+    font-size: 90%;
+}
+
+/* Product Form */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #dc3545;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 0;
+}
+
+/* MailChimp */
+
+#mc_embed_signup form {
+    padding: 0;
+}
+
+#mc_embed_signup .button {
+    clear: both;
+    background-color: #AB0368 !important;
+    border-radius: 4px;
+    transition: all 0.23s ease-in-out 0s;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: normal;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 5px 10px 0;
+    padding: 0 22px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: fit-content;
+    width: -moz-fit-content;
+}
+
+#mc_embed_signup .button:hover {
+    clear: both;
+    background-color: rgb(203, 4, 124) !important;
+    border-radius: 4px;
+    transition: all 0.23s ease-in-out 0s;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: normal;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 5px 10px 0;
+    padding: 0 22px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: top;
+    white-space: nowrap;
+    width: fit-content;
+    width: -moz-fit-content;
+}
+
+
+/*. Sign up div push down from nav */ 
+
+.all-auth-m {
+    margin-top: 100px;
+}
+
+
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+
+    .custom-toast {
+        margin-top: 3px;
+    }
+
+    .shop-now-button {
+        min-width: 250px;
+    }
+
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 40px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
+    }
+
+    .nav-link {
+        padding: 0.15rem;
+    }
+
+    .nav-link i.fa-lg {
+        font-size: 1rem;
+    }
+
+    .navbar-toggler {
+        padding: .6rem .6rem;
+        font-size: 1rem;
+    }
+
+    .about {
+        font-size: large;
+    }
+
+    .qty_input {
+        padding: .5rem;
+    }
+
+    main {
+        margin-top: 50px;
+    }
+
+}
+
+
+@media (min-width: 700px){
+    .btt-button {
+        color: #c90179;
+        height: 42px;
+        width: 42px;
+    }
+
+    .btt-button:hover {
+        color: #ffffff;
+        background-color: rgb(203, 4, 124);
+    }
+}
+
+
+/* Bag */
+
+@media (max-width: 767px) {
+    .hide-on-small {
+        display: none;
+    }
+}

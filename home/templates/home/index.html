@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
+{% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container h-100">
+        <div class="mt-5">
+            <div class=" text-center col-12 my-auto text-bg">
+                <h1 class="display-4 text-brown logo-font">
+                    DH Bakes!
+                </h1>
+                <p class="about text-brown">
+                    At SweetBite, we’re all about chocolate! From rich, velvety dark chocolate truffles to creamy, indulgent milk chocolate bars, 
+                    we craft every treat with passion and precision. Whether you're a chocolate lover or a connoisseur looking for the latest trends, 
+                    SweetBite is your go-to destination for everything chocolate.
+                    <br><br>
+                    Explore the world of artisanal chocolate with us. We keep up with the latest trends in chocolate making, 
+                    from bean-to-bar processes to exotic flavor infusions like sea salt caramel and chili chocolate. Our mission is to deliver the finest, 
+                    ethically sourced chocolate creations that are as unique as they are delicious.
+                </p>
+
+                <div class="my-6">
+                    <h4>
+                        <a href="{% url 'products' %}" class="btn shop-now-button btn-lg py-3 mb-3">Discover Our Chocolate Creations</a>
+                    </h4>
+                </div>
+            </div>
+            <div class="text-center col my-auto text-bg">
+                <div class="mb-5">
+                    <div id="mc_embed_shell">
+                        <div id="mc_embed_signup">
+                            <form action="https://example.com/subscribe" method="post" class="validate" target="_blank">
+                                <div id="mc_embed_signup_scroll">
+                                    <h1 class="display-4 text-center">Join the Chocolate Lovers Club</h1>
+                                    <h3 class="text-center">Stay updated on new trends and exclusive chocolate treats!</h3>
+                                    <div class="mc-field-group">
+                                        <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                                        <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required>
+                                    </div>
+                                    <div id="mce-responses" class="clear foot">
+                                        <div class="response" id="mce-error-response" style="display: none;"></div>
+                                        <div class="response" id="mce-success-response" style="display: none;"></div>
+                                    </div>
+                                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                                        <input type="text" name="b_example" tabindex="-1" value="">
+                                    </div>
+                                    <div class="optionalParent">
+                                        <div class="clear foot">
+                                            <input type="submit" name="subscribe" class="button subscribe" value="Subscribe">
+                                            <p style="margin: 0px auto;">
+                                                <a href="https://example.com" title="Visit SweetBite's official site">
+                                                    <img class="refferal_badge"
+                                                        src="https://example.com/images/badge.svg"
+                                                        alt="SweetBite Badge">
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script>
+        (function ($) {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0] = 'EMAIL';
+            ftypes[0] = 'email';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+    </script>
+{% endblock %}
