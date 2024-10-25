@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.contrib import messages
@@ -15,8 +15,9 @@ def all_products(request):
     category_filter = request.GET.get('category', None)
     price_min = request.GET.get('price_min')
     price_max = request.GET.get('price_max')
-    rating_filter = request.GET.get('rating')
-
+    rating_max = request.GET.get('rating_max')
+    rating_min = request.GET.get('rating_min')
+    
     # Initialize query with a default value
     query = request.GET.get('q', '')
 
@@ -46,20 +47,27 @@ def all_products(request):
             messages.error(request, "Invalid maximum price provided.")
     
     # Rating filtering logic
-    if rating_filter:
+    if rating_min:
         try:
-            rating_filter = float(rating_filter)  # Ensure rating_filter is a float
-            products = products.filter(rating__gte=rating_filter)
+            products = products.filter(rating__gte=float(rating_min))
         except ValueError:
-            messages.error(request, "Invalid rating provided.")
+            messages.error(request, "Invalid minimum rating provided.")
+    
+    if rating_max:
+        try:
+            products = products.filter(rating__lte=float(rating_max))
+        except ValueError:
+            messages.error(request, "Invalid maximum rating provided.")
 
     # Sorting logic
     if sort_option == 'price-asc':
         products = products.order_by('price')
     elif sort_option == 'price-desc':
         products = products.order_by('-price')
-    elif sort_option == 'rating':
+    elif sort_option == 'rating-desc':
         products = products.order_by('-rating')
+    elif sort_option == 'rating-asc':
+        products = products.order_by('rating')
     else:
         products = products.order_by('name')  # Default sorting by name
 
@@ -74,7 +82,8 @@ def all_products(request):
         'category_filter': category_filter,
         'price_min': price_min,
         'price_max': price_max,
-        'rating_filter': rating_filter,
+        'rating_max': rating_max,
+        'rating_min': rating_min,
         'search_term': query,  # Pass the query safely
         'categories': Category.objects.all(),  # Pass all categories for the filter dropdown
     }

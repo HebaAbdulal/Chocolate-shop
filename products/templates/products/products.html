@@ -49,18 +49,6 @@
                             <label for="price_max">Price Max:</label>
                             <input type="number" name="price_max" class="form-control mx-1" placeholder="1000" value="{{ price_max }}">
                         </div>
-
-                        <!-- Rating Filter -->
-                        <div class="form-group mx-1">
-                            <label for="rating">Min Rating:</label>
-                            <select name="rating" class="form-control mx-1">
-                                <option value="">All Ratings</option>
-                                {% for r in rating_options %}
-                                    <option value="{{ r }}"{% if r == rating_filter %} selected{% endif %}>{{ r }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-
                         <!-- Sorting Options -->
                         <div class="form-group mx-1">
                             <label for="sort">Sort By:</label>
@@ -68,7 +56,8 @@
                                 <option value="name"{% if sort_option == "name" %} selected{% endif %}>Name (A-Z)</option>
                                 <option value="price-asc"{% if sort_option == "price-asc" %} selected{% endif %}>Price (Low to High)</option>
                                 <option value="price-desc"{% if sort_option == "price-desc" %} selected{% endif %}>Price (High to Low)</option>
-                                <option value="rating"{% if sort_option == "rating" %} selected{% endif %}>Rating</option>
+                                <option value="rating-desc"{% if sort_option == "rating-desc" %} selected{% endif %}>Rating (High to Low)</option>
+                                <option value="rating-asc"{% if sort_option == "rating-asc" %} selected{% endif %}>Rating (Low to High)</option>
                             </select>
                         </div>
 
