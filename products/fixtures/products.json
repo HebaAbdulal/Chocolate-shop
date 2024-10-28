@@ -6,9 +6,10 @@
             "name": "Milk Chocolate Bar",
             "description": "Rich and creamy milk chocolate bar.",
             "price": 2.50,
-            "category": 1,
+            "category": 7,
             "image_url": "/media/1.jpg",
-            "rating": 4.5
+            "rating": 4.5,
+            "sku": "SKU001"
         }
     },
     {   
@@ -18,9 +19,10 @@
             "name": "Dark Chocolate Truffles",
             "description": "Decadent dark chocolate truffles.",
             "price": 3.00,
-            "category": 1,
+            "category": 6,
             "image_url": "/media/2.jpg",
-            "rating": 4.7
+            "rating": 4.7,
+            "sku": "SKU002"
         }
     },
     {   
@@ -30,9 +32,10 @@
             "name": "White Chocolate Bar",
             "description": "Smooth and creamy white chocolate.",
             "price": 2.75,
-            "category": 1,
+            "category": 8,
             "image_url": "/media/3.jpg",
-            "rating": 4.6
+            "rating": 4.6,
+            "sku": "SKU003"
         }
     },
     {   
@@ -42,105 +45,153 @@
             "name": "Ruby Chocolate Bites",
             "description": "Exquisite ruby chocolate with a fruity flavor.",
             "price": 3.50,
-            "category": 1,
+            "category": 9,
             "image_url": "/media/4.jpg",
-            "rating": 4.8
+            "rating": 4.8,
+            "sku": "SKU004"
         }
     },
     {   
         "model": "products.product",
         "pk": 5,
         "fields": {
-            "name": "Sugar-Free Chocolate",
-            "description": "Delicious sugar-free chocolate for the health-conscious.",
+            "name": "Fruity Chocolate",
+            "description": "Delicious fruity chocolate.",
             "price": 2.75,
-            "category": 3,
-            "image_url": "/media/5.jpg",
-            "rating": 4.2
+            "category": 10,
+            "image_url": "/media/34.png",
+            "rating": 4.2,
+            "sku": "SKU005"
         }
     },
     {   
         "model": "products.product",
         "pk": 6,
         "fields": {
-            "name": "Vegan Dark Chocolate",
-            "description": "Rich dark chocolate made without any animal products.",
-            "price": 3.25,
-            "category": 3,
-            "image_url": "/media/18.jpg",
-            "rating": 4.4
+            "name": "Nutty Chocolate",
+            "description": "Delicious dark chocolate blended with large roasted and caramelized hazelnuts from Piedmont.",
+            "price": 2.75,
+            "category": 11,
+            "image_url": "/media/32.jpg",
+            "rating": 4.2,
+            "sku": "SKU005"
         }
     },
     {   
         "model": "products.product",
         "pk": 7,
         "fields": {
-            "name": "Gluten-Free Chocolate Bar",
-            "description": "Tasty chocolate bar made without gluten ingredients.",
-            "price": 3.00,
-            "category": 3,
-            "image_url": "/media/6.jpg",
-            "rating": 4.3
+            "name": "Caramel & Toffee Chocolate",
+            "description": " Smooth chocolate, encasing a rich, buttery caramel center that melts in your mouth with every bite.",
+            "price": 2.75,
+            "category": 12,
+            "image_url": "/media/40.png",
+            "rating": 4.2,
+            "sku": "SKU005"
         }
     },
     {   
         "model": "products.product",
         "pk": 8,
         "fields": {
-            "name": "Birthday Chocolate",
-            "description": "Celebrate with this special chocolate infused with flavors.",
-            "price": 5.00,
-            "category": 4,
-            "image_url": "/media/13.jpg",
-            "rating": 4.9
+            "name": "Mint & Herbal Chocolate",
+            "description": " Smooth chocolate, encasing a rich, buttery caramel center that melts in your mouth with every bite.",
+            "price": 2.75,
+            "category": 13,
+            "image_url": "/media/41.png",
+            "rating": 4.2,
+            "sku": "SKU005"
         }
     },
     {   
         "model": "products.product",
         "pk": 9,
         "fields": {
-            "name": "Valentine's Day Chocolate Box",
-            "description": "A romantic box of assorted chocolates for your loved one.",
-            "price": 25.00,
-            "category": 4,
-            "image_url": "/media/7.jpg",
-            "rating": 5.0
+            "name": "Sugar-Free Chocolate",
+            "description": "Delicious sugar-free chocolate for the health-conscious.",
+            "price": 2.75,
+            "category": 15,
+            "image_url": "/media/5.jpg",
+            "rating": 4.2,
+            "sku": "SKU005"
         }
     },
     {   
         "model": "products.product",
         "pk": 10,
         "fields": {
-            "name": "Corporate Gift Chocolate Box",
-            "description": "Premium chocolates packaged for corporate gifting.",
-            "price": 30.00,
-            "category": 4,
-            "image_url": "/media/30.jpg",
-            "rating": 4.7
+            "name": "Vegan Dark Chocolate",
+            "description": "Rich dark chocolate made without any animal products.",
+            "price": 3.25,
+            "category": 14,
+            "image_url": "/media/18.jpg",
+            "rating": 4.4,
+            "sku": "SKU006"
         }
     },
     {   
         "model": "products.product",
         "pk": 11,
         "fields": {
-            "name": "Chocolate Gift Box",
-            "description": "A beautiful gift box filled with assorted chocolates.",
-            "price": 20.00,
-            "category": 4,
-            "image_url": "/media/9.jpg",
-            "rating": 4.6
+            "name": "Gluten-Free Chocolate Bar",
+            "description": "Tasty chocolate bar made without gluten ingredients.",
+            "price": 3.00,
+            "category": 16,
+            "image_url": "/media/6.jpg",
+            "rating": 4.3,
+            "sku": "SKU007"
         }
     },
     {   
         "model": "products.product",
         "pk": 12,
         "fields": {
-            "name": "Custom Chocolate Mix",
-            "description": "Create your own mix of chocolates.",
-            "price": 15.00,
-            "category": 5,
-            "image_url": "https://example.com/images/custom_chocolate_mix.jpg",
-            "rating": 4.8
+            "name": "Birthday Chocolate",
+            "description": "Celebrate with this special chocolate infused with flavors.",
+            "price": 5.00,
+            "category": 18,
+            "image_url": "/media/13.jpg",
+            "rating": 4.9,
+            "sku": "SKU008"
+        }
+    },
+    {   
+        "model": "products.product",
+        "pk": 13,
+        "fields": {
+            "name": "Valentine's Day Chocolate Box",
+            "description": "A romantic box of assorted chocolates for your loved one.",
+            "price": 25.00,
+            "category": 19,
+            "image_url": "/media/7.jpg",
+            "rating": 5.0,
+            "sku": "SKU009"
+        }
+    },
+    {   
+        "model": "products.product",
+        "pk": 14,
+        "fields": {
+            "name": "Corporate Gift Chocolate Box",
+            "description": "Premium chocolates packaged for corporate gifting.",
+            "price": 30.00,
+            "category": 20,
+            "image_url": "/media/30.jpg",
+            "rating": 4.7,
+            "sku": "SKU010"
+        }
+    },
+    {   
+        "model": "products.product",
+        "pk": 15,
+        "fields": {
+            "name": "Chocolate Gift Box",
+            "description": "A beautiful gift box filled with assorted chocolates.",
+            "price": 20.00,
+            "category": 17,
+            "image_url": "/media/9.jpg",
+            "rating": 4.6,
+            "sku": "SKU011"
         }
     }
 ]

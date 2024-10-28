@@ -43,7 +43,7 @@
         </div>
     </li>
     <li class="list-inline-item">
-        <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-brown{% endif %} nav-link d-block d-lg-none" href="">
+        <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-brown{% endif %} nav-link d-block d-lg-none" href="{% url 'view_bag' %}">
             <div class="text-center">
                 <div><i class="text-brown fas fa-bag-shopping fa-lg"></i></div>
                 <p class="text-brown my-0">

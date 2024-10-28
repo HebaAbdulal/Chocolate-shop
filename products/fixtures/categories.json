@@ -1,37 +1,123 @@
 [
+    
     {
         "model": "products.category",
-        "pk": 1,
+        "pk": 6,
         "fields": {
-            "name": "Classic Chocolates"
+            "name": "dark_chocolates",
+            "friendly_name": "Dark Chocolates"
         }
     },
     {
         "model": "products.category",
-        "pk": 2,
+        "pk": 7,
         "fields": {
-            "name": "Flavoured Chocolates"
+            "name": "milk_chocolates",
+            "friendly_name": "Milk Chocolates"
         }
     },
     {
         "model": "products.category",
-        "pk": 3,
+        "pk": 8,
         "fields": {
-            "name": "Diet Chocolates"
+            "name": "white_chocolates",
+            "friendly_name": "White Chocolates"
         }
     },
     {
         "model": "products.category",
-        "pk": 4,
+        "pk": 9,
         "fields": {
-            "name": "Gifts"
+            "name": "ruby_chocolates",
+            "friendly_name": "Ruby Chocolates"
         }
     },
     {
         "model": "products.category",
-        "pk": 5,
+        "pk": 10,
         "fields": {
-            "name": "Build Your Own"
+            "name": "fruity_chocolates",
+            "friendly_name": "Fruity Chocolates"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 11,
+        "fields": {
+            "name": "nutty_chocolates",
+            "friendly_name": "Nutty Chocolates"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 12,
+        "fields": {
+            "name": "caramel_toffee_chocolates",
+            "friendly_name": "Caramel & Toffee Chocolates"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 13,
+        "fields": {
+            "name": "mint_herbal_chocolates",
+            "friendly_name": "Mint & Herbal Chocolates"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 14,
+        "fields": {
+            "name": "vegan_chocolates",
+            "friendly_name": "Vegan Chocolates"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 15,
+        "fields": {
+            "name": "sugar_free_chocolates",
+            "friendly_name": "Sugar Free Chocolates"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 16,
+        "fields": {
+            "name": "gluten_free_chocolates",
+            "friendly_name": "Gluten Free Chocolates"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 17,
+        "fields": {
+            "name": "gift_hampers",
+            "friendly_name": "Gift & Hampers"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 18,
+        "fields": {
+            "name": "birthday",
+            "friendly_name": "Birthday"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 19,
+        "fields": {
+            "name": "valentines_day",
+            "friendly_name": "Valentine's Day"
+        }
+    },
+    {
+        "model": "products.category",
+        "pk": 20,
+        "fields": {
+            "name": "corporate_gifts",
+            "friendly_name": "Corporate Gifts"
         }
     }
 ]

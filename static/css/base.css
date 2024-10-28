@@ -59,20 +59,19 @@ body {
 .btn-brown:hover,
 .btn-brown:active,
 .btn-brown:focus {
-    background: #2f0408bf;
-    color: white;
+    background: #2f0408bf !important;
+    color: white !important;
 }
 
 .pd-btn {
     background-color: #ffffff;
-    color: rgba(233, 134, 134, 0.377);
+    color: #451f0c;
 }
 
 .pd-btn:hover {
-    background-color: rgba(233, 134, 134, 0.377);
-    color: #ffffff;
+    background-color: #2f0408bf !important;
+    color: #ffffff !important;
 }
-
 
 
 .text-brown {
