@@ -48,8 +48,8 @@ body {
 }
 
 .btn-brown {
-    background: white;
-    color: #2f0408bf;
+    background: #2f0408bf !important;
+    color: white !important;
 }
 
 
