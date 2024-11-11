@@ -166,7 +166,8 @@ body {
 
 .fixed-size {
     width: 320px;
-    height: 240px
+    height: 240px;
+    object-fit: cover;
 }
 
 .img-hover:hover {

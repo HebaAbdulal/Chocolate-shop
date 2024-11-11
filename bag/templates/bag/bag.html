@@ -65,7 +65,7 @@
                                         <p class="mb-1 font-weight-bold text-brown">{{ item.product.name }}</p>
                                         <p class="mb-0 text-muted small">SKU: {{ item.product.sku|upper }}</p>
                                     </td>
-                                    <td class="align-middle">£{{ item.product.price }}</td>
+                                    <td class="align-middle">${{ item.product.price }}</td>
                                     <td class="align-middle" style="width: 15%;">
                                         <form class="form update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                             {% csrf_token %}
@@ -102,24 +102,24 @@
                             <tr>
                                 <td colspan="4"></td>
                                 <td class="font-weight-bold">Bag Total:</td>
-                                <td class="font-weight-bold">£{{ total|floatformat:2 }}</td>
+                                <td class="font-weight-bold">${{ total|floatformat:2 }}</td>
                             </tr>
                             <tr>
                                 <td colspan="4"></td>
                                 <td>Delivery:</td>
-                                <td>£{{ delivery|floatformat:2 }}</td>
+                                <td>${{ delivery|floatformat:2 }}</td>
                             </tr>
                             <tr>
                                 <td colspan="4"></td>
                                 <td><strong>Grand Total:</strong></td>
-                                <td class="font-weight-bold">£{{ grand_total|floatformat:2 }}</td>
+                                <td class="font-weight-bold">${{ grand_total|floatformat:2 }}</td>
                             </tr>
                             <tr>
                                 <td colspan="6" class="text-right pt-4">
                                     <a href="{% url 'products' %}" class="btn btn-outline-brown pd-btn border-brown btn-lg mr-2 mb-2 hide-on-small">
                                         <i class="fas fa-chevron-left"></i> Keep Shopping
                                     </a>
-                                    <a href="" class="btn btn-brown btn-lg mb-2">
+                                    <a href="{% url 'checkout' %}" class="btn btn-brown btn-lg mb-2">
                                         Secure Checkout <i class="fas fa-lock ml-2"></i>
                                     </a>
                                 </td>

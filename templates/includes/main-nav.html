@@ -11,9 +11,10 @@
                 All Products
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item text-brown">By Rating</a>
-                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item text-brown">By Price</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item text-brown">By Category</a>
+                <a href="{% url 'products' %}?sort=rating-desc" class="dropdown-item text-brown">By Rating</a>
+                <a href="{% url 'products' %}?sort=price-asc" class="dropdown-item text-brown">By Price (Low to High)</a>
+                <a href="{% url 'products' %}?sort=price-desc" class="dropdown-item text-brown">By Price (High to Low)</a>
+                <a href="{% url 'products' %}?sort=category-asc" class="dropdown-item text-brown">By Category</a>
                 <a href="{% url 'products' %}" class="dropdown-item text-brown">All Chocolates</a>
             </div>
         </li>
@@ -23,7 +24,7 @@
                 Classic Chocolates
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="classic-chocolates-link">
-                <a href="{% url 'products' %}?category=Dark Chocolates" class="dropdown-item text-brown">Dark Chocolates</a>
+                <a href="{% url 'products' %}?category=dark_chocolates" class="dropdown-item text-brown">Dark Chocolates</a>
                 <a href="{% url 'products' %}?category=milk_chocolates" class="dropdown-item text-brown">Milk Chocolates</a>
                 <a href="{% url 'products' %}?category=white_chocolates" class="dropdown-item text-brown">White Chocolates</a>
                 <a href="{% url 'products' %}?category=ruby_chocolates" class="dropdown-item text-brown">Ruby Chocolates</a>
@@ -62,9 +63,9 @@
                 Gifts
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="gifts-link">
-                <a href="{% url 'products' %}?category=gifts_hampers" class="dropdown-item text-brown">Gift & Hampers</a>
+                <a href="{% url 'products' %}?category=gift_hampers" class="dropdown-item text-brown">Gift & Hampers</a>
                 <a href="{% url 'products' %}?category=birthday" class="dropdown-item text-brown">Birthday</a>
-                <a href="{% url 'products' %}?category=valentin's_day" class="dropdown-item text-brown">Valentine's Day</a>
+                <a href="{% url 'products' %}?category=valentines_day" class="dropdown-item text-brown">Valentine's Day</a>
                 <a href="{% url 'products' %}?category=corporate_gifts" class="dropdown-item text-brown">Corporate Gifts</a>
                 <a href="{% url 'products' %}?category=gifts_hampers,birthday,corporate_giftsvalentin's_day" class="dropdown-item text-brown">All Gifts</a>
             </div>
