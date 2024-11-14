@@ -44,7 +44,7 @@ select option[value=""] {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(244, 5, 149, .85);
+  background: rgba(94, 72, 33, 0.85);
   z-index: 99999;
 }
 
@@ -57,7 +57,7 @@ select option[value=""] {
 }
 
 #payment-form .form-control {
-  color: #AB0368;
+  color: #41280d;
 }
 
 #payment-form input::placeholder {
