@@ -62,6 +62,10 @@ form.addEventListener('submit', function(ev) {
         'client_secret': clientSecret,
         'save_info': saveInfo,
     };
+
+    // Log the data being sent
+    console.log('POST Data:', postData);
+
     var url = '/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(function () {
