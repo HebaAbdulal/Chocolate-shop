@@ -1,12 +1,13 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 
 from .models import UserProfile
 from .forms import UserProfileForm
 
+from checkout.models import Order
 
 def profile(request):
-    """ Display the user's profile. """
+    """ Display and update the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
@@ -14,8 +15,12 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully')
+            return redirect('profile')  # Redirect to avoid resubmission on page refresh
+        else:
+            messages.error(request, 'Failed to update profile. Please ensure the form is valid.')
+    else:
+        form = UserProfileForm(instance=profile)
 
-    form = UserProfileForm(instance=profile)
     orders = profile.orders.all()
 
     template = 'profiles/profile.html'
@@ -23,6 +28,24 @@ def profile(request):
         'form': form,
         'orders': orders,
         'on_profile_page': True
+    }
+
+    return render(request, template, context)
+
+
+def order_history(request, order_number):
+    """ Display past order details. """
+    order = get_object_or_404(Order, order_number=order_number)
+
+    messages.info(request, (
+        f'This is a past confirmation for order number {order_number}. '
+        'A confirmation email was sent on the order date.'
+    ))
+
+    template = 'checkout/checkout_success.html'
+    context = {
+        'order': order,
+        'from_profile': True,
     }
 
     return render(request, template, context)
