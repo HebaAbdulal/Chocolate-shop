@@ -24,11 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-kpmhop&a1%+ve)06wc#6*kik-_g8c2$17v3%*dscqf)ee1r^j8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net']
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
+    '.herokuapp.com'
 ]
 
 
