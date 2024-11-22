@@ -28,9 +28,14 @@ SECRET_KEY = 'django-insecure-kpmhop&a1%+ve)06wc#6*kik-_g8c2$17v3%*dscqf)ee1r^j8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
-                'sweetbite.herokuapp.com',
+ALLOWED_HOSTS = [
+    '8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
+    'sweetbite.herokuapp.com',
+    '127.0.0.1',               # Optional, for local testing
+    'localhost',               # Optional, for local testing
 ]
+
+
 CSRF_TRUSTED_ORIGINS = [
     'https://8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
     'https://sweetbite.herokuapp.com',
