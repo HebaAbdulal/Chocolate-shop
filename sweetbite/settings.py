@@ -26,17 +26,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-kpmhop&a1%+ve)06wc#6*kik-_g8c2$17v3%*dscqf)ee1r^j8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
+    '127.0.0.1',
+    'localhost',
     '8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
-    'sweetbite.herokuapp.com',
-    '127.0.0.1',               # Optional, for local testing
-    'localhost',               # Optional, for local testing
+    'https://8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
+    'sweetbite-b43a4ae6b9be.herokuapp.com',
 ]
 
 
 CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:8000',
     'https://8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
     'https://sweetbite.herokuapp.com',
 ]
@@ -186,7 +188,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 MEDIA_URL = '/media/'
