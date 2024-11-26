@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Category(models.Model):
     """
@@ -29,5 +30,16 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Wishlist(models.Model):
+    """
+    A model representing a user's wishlist, containing favorite products.
+    """
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='wishlist')
+    products = models.ManyToManyField(Product, related_name='wishlists')
+
+    def __str__(self):
+        return f"{self.user.username}'s Wishlist"
 
 

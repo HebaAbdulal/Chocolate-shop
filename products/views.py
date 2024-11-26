@@ -5,7 +5,7 @@ from django.db.models.functions import Lower
 
 from django.core.paginator import Paginator
 from django.contrib import messages
-from .models import Product, Category
+from .models import Product, Category, Wishlist
 from .forms import ProductForm
 
 
@@ -175,3 +175,51 @@ def delete_product(request, product_id):
     product.delete()
     messages.success(request, 'Product deleted!')
     return redirect(reverse('products'))
+
+
+@login_required
+def view_wishlist(request):
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    products = wishlist.products.all().order_by('id')  # Add ordering here
+    # Pagination logic
+    paginator = Paginator(products, 8)  # Show 8 products per page
+    page_number = request.GET.get('page')
+    page_products = paginator.get_page(page_number)
+
+    context = {
+        'products': page_products,  # Pass the paginated products
+    }
+    paginated_products = paginator.get_page(page_number)
+    return render(request, 'products/wishlist/view_wishlist.html', {'products': paginated_products})
+
+@login_required
+def add_to_wishlist(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    wishlist.products.add(product)  # Add the product to the wishlist
+    return redirect('view_wishlist')
+
+
+@login_required
+def remove_from_wishlist(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    wishlist.products.remove(product)
+    return redirect('view_wishlist')
+
+
+@login_required
+def add_to_bag(request, product_id):
+    """ Add a quantity of the specified product to the shopping bag """
+    product = get_object_or_404(Product, pk=product_id)
+    bag = request.session.get('bag', {})  # Retrieve the shopping bag from the session
+
+    # Add product to the bag
+    if product_id in bag:
+        bag[product_id] += 1  # Increase quantity if already in bag
+    else:
+        bag[product_id] = 1  # Add product with quantity 1 if not in bag
+
+    request.session['bag'] = bag  # Save the updated bag back to the session
+    messages.success(request, f'{product.name} added to your bag!')
+    return redirect('view_wishlist')  # Redirect back to the wishlist page
