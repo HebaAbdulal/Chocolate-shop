@@ -1,6 +1,6 @@
 from django import forms
 from .widgets import CustomClearableFileInput
-from .models import Product, Category
+from .models import Product, Category, Review
 
 
 class ProductForm(forms.ModelForm):
@@ -23,3 +23,12 @@ class ProductForm(forms.ModelForm):
 
 class AddToWishlistForm(forms.Form):
     product_id = forms.IntegerField(widget=forms.HiddenInput)
+
+
+class ReviewForm(forms.ModelForm):
+    class Meta:
+        model = Review
+        fields = ['review_text']
+        widgets = {
+            'review_text': forms.Textarea(attrs={'rows': 4}),
+        }

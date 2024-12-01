@@ -192,6 +192,36 @@ body {
     box-shadow: 5px 5px 5px;
 }
 
+.review-form {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.review-form h4 {
+    margin-bottom: 10px;
+}
+
+.review-form button {
+    margin-top: 10px;
+}
+
+.star {
+    font-size: 2rem;
+    cursor: pointer;
+    color: gray;
+    transition: color 0.3s;
+}
+
+.star.selected,
+.star:hover {
+    color: gold;
+}
+
+
+
 /* Product management */ 
 
 .edit-products {

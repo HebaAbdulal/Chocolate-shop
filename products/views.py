@@ -2,11 +2,12 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.db.models import Q
 from django.contrib.auth.decorators import login_required
 from django.db.models.functions import Lower
-
 from django.core.paginator import Paginator
 from django.contrib import messages
-from .models import Product, Category, Wishlist
-from .forms import ProductForm
+from .models import Product, Category, Wishlist, Review
+from .forms import ProductForm, ReviewForm
+from checkout.models import OrderLineItem
+from django.views import View
 
 
 
@@ -98,14 +99,42 @@ def all_products(request):
 
 
 def product_detail(request, product_id):
-    """ A view to show a specific product in detail """
-
     product = get_object_or_404(Product, pk=product_id)
+    stars_range = range(1, 6)
+    reviews = Review.objects.filter(product=product, status='approved')
+
+    # Check if the user has purchased the product
+    has_purchased = (
+    OrderLineItem.objects.filter(
+        order__user_profile__user=request.user,  # Ensure this matches your model relationships
+        product=product
+    ).exists()
+    if request.user.is_authenticated else False
+    )
+
+    # Handle review form submission
+    form = None
+    if request.method == 'POST' and has_purchased:
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            # Save the review
+            review = form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            review.status = 'approved'  # Optional: Mark as pending for moderation
+            review.save()
+            messages.success(request, "Your review has been submitted!")
+            return redirect('product_detail', product_id=product.id)
+
+    elif has_purchased:
+        form = ReviewForm()
 
     context = {
         'product': product,
+        'reviews': reviews,
+        'form': form,
+        'has_purchased': has_purchased,
     }
-
     return render(request, 'products/product_detail.html', context)
 
 
@@ -230,3 +259,29 @@ def add_to_bag(request, product_id):
     request.session['bag'] = bag  # Save the updated bag back to the session
     messages.success(request, f'{product.name} added to your bag!')
     return redirect('view_wishlist')  # Redirect back to the wishlist page
+
+
+@login_required
+def submit_review(request, product_id):
+    product = get_object_or_404(Product, id=product_id)
+
+    if request.method == 'POST':
+        rating = request.POST['rating']
+        review_text = request.POST['review_text']
+
+        # Check if the user has already purchased the product
+        if not has_purchased_product(request.user, product):  # Define this check based on your order logic
+            messages.error(request, "You can only review products you have purchased.")
+            return redirect('product_detail', product_id=product.id)
+
+        # Create the review (pending approval)
+        Review.objects.create(
+            user=request.user,
+            product=product,
+            rating=rating,
+            review_text=review_text,
+        )
+        messages.success(request, "Your review has been submitted and is awaiting approval.")
+        return redirect('product_detail', product_id=product.id)
+
+    return render(request, 'submit_review.html', {'product': product})

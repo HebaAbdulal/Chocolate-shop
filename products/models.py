@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.exceptions import ValidationError
+
 
 class Category(models.Model):
     """
@@ -43,3 +45,26 @@ class Wishlist(models.Model):
         return f"{self.user.username}'s Wishlist"
 
 
+class Review(models.Model):
+
+    STATUS_CHOICES = [
+    ('pending', 'Pending'),
+    ('approved', 'Approved'),
+    ('rejected', 'Rejected'),
+    ]
+
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    review_text = models.TextField()
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='approved')
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    # In products/models.py
+def clean(self):
+    OrderLineItem = apps.get_model('checkout', 'OrderLineItem')  # Dynamically fetch model
+    if not OrderLineItem.objects.filter(order__user=self.user, product=self.product).exists():
+        raise ValidationError("You can only review products you have purchased.")
+
+    def save(self, *args, **kwargs):
+        self.clean()
+        super().save(*args, **kwargs)
