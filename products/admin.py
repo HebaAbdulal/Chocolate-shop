@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category, Review
-
+from .models import Product, Category, Review, Discount
 
 class ProductAdmin(admin.ModelAdmin):
     list_display = (
@@ -15,7 +14,6 @@ class ProductAdmin(admin.ModelAdmin):
     search_fields = ('name', 'sku')
     list_filter = ('category',)
 
-
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
@@ -23,10 +21,8 @@ class CategoryAdmin(admin.ModelAdmin):
     )
     search_fields = ('friendly_name', 'name')
 
-
 admin.site.register(Product, ProductAdmin)
-admin.site.register(Category, CategoryAdmin)
-
+admin.site.register(Category, CategoryAdmin)  # This is the correct registration
 
 @admin.register(Review)
 class ReviewAdmin(admin.ModelAdmin):
@@ -40,3 +36,7 @@ class ReviewAdmin(admin.ModelAdmin):
     def reject_reviews(self, request, queryset):
         queryset.update(status='rejected')
         self.message_user(request, "Selected reviews have been rejected.")
+
+@admin.register(Discount)
+class DiscountAdmin(admin.ModelAdmin):
+    list_display = ('category', 'discount_percentage', 'start_date', 'end_date')

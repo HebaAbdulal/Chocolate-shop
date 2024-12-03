@@ -29,9 +29,22 @@ class Product(models.Model):
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
     rating = models.DecimalField(max_digits=2, decimal_places=1, null=True, blank=True)
+    discount_percent = models.DecimalField(
+        max_digits=5,
+        decimal_places=2,
+        default=0.0,
+        help_text="Discount percentage (e.g., 10 for 10%)"
+    )
 
     def __str__(self):
         return self.name
+
+    def calculate_discounted_price(self):
+        """Calculate price after applying the discount."""
+        if self.discount_percent > 0:
+            discount = self.price * (self.discount_percent / 100)
+            return self.price - discount
+        return self.price
 
 
 class Wishlist(models.Model):
@@ -68,3 +81,14 @@ def clean(self):
     def save(self, *args, **kwargs):
         self.clean()
         super().save(*args, **kwargs)
+
+
+class Discount(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name="discounts")
+    discount_percentage = models.FloatField()
+    start_date = models.DateTimeField()
+    end_date = models.DateTimeField()
+
+    def is_active(self):
+        now = timezone.now()
+        return self.start_date <= now <= self.end_date

@@ -8,7 +8,7 @@ from .models import Product, Category, Wishlist, Review
 from .forms import ProductForm, ReviewForm
 from checkout.models import OrderLineItem
 from django.views import View
-
+from django.utils import timezone
 
 
 def all_products(request):
@@ -285,3 +285,15 @@ def submit_review(request, product_id):
         return redirect('product_detail', product_id=product.id)
 
     return render(request, 'submit_review.html', {'product': product})
+
+
+def calculate_discounted_price(product):
+    category_discounts = product.category.discounts.filter(
+        start_date__lte=timezone.now(),
+        end_date__gte=timezone.now()
+    )
+    if category_discounts.exists():
+        discount = category_discounts.first()
+        discounted_price = product.price * (1 - discount.discount_percentage / 100)
+        return round(discounted_price, 2)
+    return product.price
