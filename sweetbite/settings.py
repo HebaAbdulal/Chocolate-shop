@@ -33,7 +33,7 @@ ALLOWED_HOSTS = [
     'localhost',
     '8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
     'https://8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
-    'sweetbite.herokuapp.com', 'localhost'
+    'sweetbite-b43a4ae6b9be.herokuapp.com', 'localhost'
 ]
 
 
