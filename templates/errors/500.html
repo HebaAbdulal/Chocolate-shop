@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="container h-100">
+        <div class="row h-100">
+            <div class="text-center col-12 my-auto text-bg">
+                <h1 class="display-4 text-brown logo-font">
+                    Error 500 - Internal Sever Error!
+                    
+                </h1>
+                <p class="about text-brown" width="90">
+                    Nothing to worry about, this one's on us! Please go back to the home page below.
+                </p>
+
+                <div class="my-6">
+                    <h4>
+                        <a href="{% url 'home' %}" class="shop-now-button btn btn-lg py-3">Back to home page</a>
+                    </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
