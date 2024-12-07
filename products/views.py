@@ -266,7 +266,6 @@ def submit_review(request, product_id):
     product = get_object_or_404(Product, id=product_id)
 
     if request.method == 'POST':
-        rating = request.POST['rating']
         review_text = request.POST['review_text']
 
         # Check if the user has already purchased the product
@@ -278,13 +277,12 @@ def submit_review(request, product_id):
         Review.objects.create(
             user=request.user,
             product=product,
-            rating=rating,
             review_text=review_text,
         )
         messages.success(request, "Your review has been submitted and is awaiting approval.")
         return redirect('product_detail', product_id=product.id)
 
-    return render(request, 'submit_review.html', {'product': product})
+    return render(request, 'product_detail.html', {'product': product})
 
 
 def calculate_discounted_price(product):

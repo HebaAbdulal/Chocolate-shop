@@ -1,9 +1,13 @@
-from django import forms 
+from django import forms
 from .models import Order
+from django.core.exceptions import ValidationError
 
 
 class OrderForm(forms.ModelForm):
-    """ A form for capturing order details """
+    """A form for capturing order details."""
+
+    full_name = forms.CharField(max_length=50)
+    postcode = forms.CharField(max_length=20, required=True)
 
     class Meta:
         model = Order
@@ -13,12 +17,13 @@ class OrderForm(forms.ModelForm):
                   'county',)
 
     def __init__(self, *args, **kwargs):
-        """
-        Add placeholders, classes, and optionally prefill
-        'full_name' if provided via kwargs.
-        """
         user_profile = kwargs.pop('user_profile', None)
         super().__init__(*args, **kwargs)
+
+        # Set initial values for 'full_name' if user profile is provided
+        if user_profile and hasattr(user_profile, 'name'):
+            self.initial['full_name'] = user_profile.name
+
         placeholders = {
             'full_name': 'Full Name',
             'email': 'Email Address',
@@ -33,14 +38,19 @@ class OrderForm(forms.ModelForm):
         # Autofocus on the first field
         self.fields['full_name'].widget.attrs['autofocus'] = True
 
-        # Add placeholders and class styling
         for field in self.fields:
-            if field != 'country':
-                placeholder = f'{placeholders[field]} *' if self.fields[field].required else placeholders[field]
+            if field != 'country':  # Country field does not get a placeholder
+                placeholder = placeholders[field]
+                if self.fields[field].required:
+                    placeholder = f'{placeholder} *'
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
-            self.fields[field].label = False
 
-        # Prefill 'full_name' if available in user profile
-        if user_profile and user_profile.name:
-            self.fields['full_name'].initial = user_profile.name
+            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
+            self.fields[field].label = False  # Optionally remove labels
+
+    def clean_postcode(self):
+        """Custom validation for the postcode field."""
+        postcode = self.cleaned_data.get('postcode')
+        if len(postcode) < 5:
+            raise ValidationError("Postcode is too short.")
+        return postcode

@@ -1,0 +1,33 @@
+                      List of relations
+ Schema |             Name              | Type  |    Owner    
+--------+-------------------------------+-------+-------------
+ public | account_emailaddress          | table | u06v4b4luob
+ public | account_emailconfirmation     | table | u06v4b4luob
+ public | auth_group                    | table | u06v4b4luob
+ public | auth_group_permissions        | table | u06v4b4luob
+ public | auth_permission               | table | u06v4b4luob
+ public | auth_user                     | table | u06v4b4luob
+ public | auth_user_groups              | table | u06v4b4luob
+ public | auth_user_user_permissions    | table | u06v4b4luob
+ public | checkout_coupon               | table | u06v4b4luob
+ public | checkout_order                | table | u06v4b4luob
+ public | checkout_order_coupons        | table | u06v4b4luob
+ public | checkout_orderlineitem        | table | u06v4b4luob
+ public | django_admin_log              | table | u06v4b4luob
+ public | django_content_type           | table | u06v4b4luob
+ public | django_migrations             | table | u06v4b4luob
+ public | django_session                | table | u06v4b4luob
+ public | django_site                   | table | u06v4b4luob
+ public | products_category             | table | u06v4b4luob
+ public | products_discount             | table | u06v4b4luob
+ public | products_product              | table | u06v4b4luob
+ public | products_review               | table | u06v4b4luob
+ public | products_wishlist             | table | u06v4b4luob
+ public | products_wishlist_products    | table | u06v4b4luob
+ public | profiles_userprofile          | table | u06v4b4luob
+ public | socialaccount_socialaccount   | table | u06v4b4luob
+ public | socialaccount_socialapp       | table | u06v4b4luob
+ public | socialaccount_socialapp_sites | table | u06v4b4luob
+ public | socialaccount_socialtoken     | table | u06v4b4luob
+(28 rows)
+

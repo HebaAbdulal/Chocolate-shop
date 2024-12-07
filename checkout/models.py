@@ -12,7 +12,6 @@ from django_countries.fields import CountryField
 from products.models import Product
 
 
-
 class Order(models.Model):
     """
     This model captures the details of a customer's order,

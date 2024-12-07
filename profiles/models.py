@@ -12,7 +12,7 @@ class UserProfile(models.Model):
     delivery information and order history
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    name = models.CharField(max_length=255, blank=True, null=True)
+    name = models.CharField(max_length=255, blank=False, null=True)
     default_phone_number = models.CharField(max_length=20, null=True, blank=True)
     default_street_address1 = models.CharField(max_length=80, null=True, blank=True)
     default_street_address2 = models.CharField(max_length=80, null=True, blank=True)
@@ -27,10 +27,11 @@ class UserProfile(models.Model):
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
-    """
-    Create or update the user profile
-    """
     if created:
-        UserProfile.objects.create(user=instance)
-    # Existing users: just save the profile
-    instance.userprofile.save()
+        # User profile is created for the new user
+        UserProfile.objects.create(user=instance, name="Test User")
+    else:
+        try:
+            instance.profile = UserProfile.objects.get(user=instance)
+        except UserProfile.DoesNotExist:
+            instance.profile = UserProfile.objects.create(user=instance, name="Test User")
