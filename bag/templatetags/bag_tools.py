@@ -2,6 +2,7 @@ from django import template
 
 register = template.Library()
 
+
 @register.filter(name='calc_subtotal')
 def calc_subtotal(price, quantity):
     """
@@ -10,13 +11,14 @@ def calc_subtotal(price, quantity):
     """
     return price * quantity
 
+
 @register.filter(name='calculate_discounted_price_filter')
 def calculate_discounted_price_filter(product):
     """
-    Returns the discounted price of a product if applicable, otherwise the original price.
-    Assumes the Product model has a method `calculate_discounted_price` that handles this.
+    Returns the discounted price of a product if applicable,
+    otherwise the original price.
     """
     try:
         return product.calculate_discounted_price()
     except AttributeError:
-        return product.price  # Fallback to the original price if method is unavailable
+        return product.price

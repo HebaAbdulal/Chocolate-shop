@@ -2,6 +2,7 @@ from django.test import TestCase, Client
 from django.urls import reverse
 from products.models import Product, Category
 
+
 class TestBagViews(TestCase):
     """Test suite for bag views."""
 
@@ -32,8 +33,8 @@ class TestBagViews(TestCase):
             reverse('add_to_bag', args=[self.product.id]),
             data={'quantity': 1, 'redirect_url': reverse('view_bag')}
         )
-        self.assertEqual(response.status_code, 302)  # Redirect after adding to bag
-        self.assertIn(str(self.product.id), self.client.session['bag'])  # Product added to bag
+        self.assertEqual(response.status_code, 302)
+        self.assertIn(str(self.product.id), self.client.session['bag'])
 
     def test_adjust_bag(self):
         """Test the adjust_bag view."""
@@ -47,7 +48,7 @@ class TestBagViews(TestCase):
             data={'quantity': 2}
         )
         self.assertEqual(response.status_code, 302)  # Redirect after adjusting
-        self.assertEqual(self.client.session['bag'][str(self.product.id)], 2)  # Quantity updated
+        self.assertEqual(self.client.session['bag'][str(self.product.id)], 2)
 
     def test_remove_from_bag(self):
         """Test the remove_from_bag view."""
@@ -56,6 +57,7 @@ class TestBagViews(TestCase):
         session['bag'] = {str(self.product.id): 1}
         session.save()
 
-        response = self.client.post(reverse('remove_bag', args=[self.product.id]))
-        self.assertEqual(response.status_code, 200)  # Success status
-        self.assertNotIn(str(self.product.id), self.client.session['bag'])  # Product removed
+        response = self.client.post(reverse('remove_bag',
+                                    args=[self.product.id]))
+        self.assertEqual(response.status_code, 200)
+        self.assertNotIn(str(self.product.id), self.client.session['bag'])

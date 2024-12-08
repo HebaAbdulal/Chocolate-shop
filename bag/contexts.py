@@ -1,19 +1,20 @@
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
-from products.models import Product  # Assuming products are stored in Product model
+from products.models import Product
+
 
 def bag_contents(request):
     bag = request.session.get('bag', {})
-    
+
     bag_items = []
     total = Decimal('0.00')
     product_count = 0
-    standard_delivery = Decimal(str(settings.STANDARD_DELIVERY))  # Convert to Decimal
+    standard_delivery = Decimal(str(settings.STANDARD_DELIVERY))
 
     for item_id, item_data in bag.items():
         product = get_object_or_404(Product, pk=item_id)
-        
+
         if isinstance(item_data, int):
             quantity = item_data
             total += quantity * product.price
