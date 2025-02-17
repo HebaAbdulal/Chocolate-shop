@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/accounts/login/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/bag/bag/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?sort=rating-desc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?sort=price-asc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?sort=price-desc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?sort=category-asc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=dark_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=milk_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=white_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=ruby_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=dark_chocolates,milk_chocolates,white_chocolates,ruby_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=fruity_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=nutty_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=caramel_toffee_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=mint_herbal_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=fruity_chocolates,nutty_chocolates,caramel_toffee_chocolates,mint_herbal_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=vegan_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=sugar_free_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=gluten_free_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=vegan_chocolates,sugar_free_chocolatesm,gluten_free_chocolates</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=gift_hampers</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=birthday</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=valentines_day</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=corporate_gifts</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?category=gifts_hampers,birthday,corporate_giftsvalentin's_day</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/accounts/login/?next=/products/wishlist/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/17/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/13/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/12/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/2/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/14/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/15/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/3/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/1/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=2&amp;sort=rating-desc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=3&amp;sort=rating-desc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/7/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/5/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/6/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/9/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/8/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=2&amp;sort=price-asc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=3&amp;sort=price-asc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/18/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/19/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/10/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=2&amp;sort=price-desc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=3&amp;sort=price-desc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/product/11/</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=2&amp;sort=category-asc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=3&amp;sort=category-asc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=2&amp;sort=name</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=3&amp;sort=name</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/accounts/signup/?next=%2Fproducts%2Fwishlist%2F</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=1&amp;sort=rating-desc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=1&amp;sort=price-asc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=1&amp;sort=price-desc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=1&amp;sort=category-asc</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/products/products/?page=1&amp;sort=name</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://sweetbite-b43a4ae6b9be.herokuapp.com/accounts/login/?next=%2Fproducts%2Fwishlist%2F</loc>
+  <lastmod>2025-02-17T08:14:10+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>

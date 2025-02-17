@@ -28,7 +28,7 @@
                        <!-- Category Filter -->
                         <div class="form-group mx-1">
                             <label for="category">Category:</label>
-                            <select name="category" class="form-control mx-1">
+                            <select name="category" class="form-control mx-1" id="category">
                                 <option value="">All Categories</option>
                                 <!-- Dynamically populate categories -->
                                 {% for category in categories %}
@@ -41,16 +41,16 @@
                         <!-- Price Filter -->
                         <div class="form-group mx-1">
                             <label for="price_min">Price Min:</label>
-                            <input type="number" name="price_min" class="form-control mx-1" placeholder="0" value="{{ price_min }}">
+                            <input type="number" name="price_min" class="form-control mx-1" placeholder="0" value="" id="price_min">
                         </div>
                         <div class="form-group mx-1">
                             <label for="price_max">Price Max:</label>
-                            <input type="number" name="price_max" class="form-control mx-1" placeholder="1000" value="{{ price_max }}">
+                            <input type="number" name="price_max" class="form-control mx-1" placeholder="1000" value="" id="price_max">
                         </div>
                         <!-- Sorting Options -->
                         <div class="form-group mx-1">
                             <label for="sort">Sort By:</label>
-                            <select name="sort" class="form-control mx-1">
+                            <select name="sort" id="sort" class="form-control mx-1">
                                 <option value="name"{% if sort_option == "name" %} selected{% endif %}>Name (A-Z)</option>
                                 <option value="price-asc"{% if sort_option == "price-asc" %} selected{% endif %}>Price (Low to High)</option>
                                 <option value="price-desc"{% if sort_option == "price-desc" %} selected{% endif %}>Price (High to Low)</option>

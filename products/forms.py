@@ -3,12 +3,28 @@ from .widgets import CustomClearableFileInput
 from .models import Product, Category, Review
 
 
+class CustomClearableFileInput(forms.ClearableFileInput):
+    input_text = "Choose a file"
+    clear_checkbox_label = "Remove file"
+    initial_text = "Currently"
+    checkbox_name = None
+    checkbox_id = None
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.attrs.update({'id': 'new-image'})
+
+
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = '__all__'
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(
+        label='Image', required=False, widget=CustomClearableFileInput
+    )
+    description = forms.CharField(
+        required=False, widget=forms.Textarea, label="Description")
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

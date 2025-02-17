@@ -6,12 +6,12 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = UserProfile
         fields = (
-            'name', 
-            'default_phone_number', 
-            'default_postcode', 
-            'default_town_or_city', 
-            'default_street_address1', 
-            'default_street_address2', 
+            'name',
+            'default_phone_number',
+            'default_postcode',
+            'default_town_or_city',
+            'default_street_address1',
+            'default_street_address2',
             'default_county'
         )
 
@@ -37,7 +37,7 @@ class UserProfileForm(forms.ModelForm):
         self.fields['name'].widget.attrs['autofocus'] = True
 
         for field in self.fields:
-            if field != 'default_country':  # If 'default_country' exists in your model
+            if field != 'default_country':
                 placeholder = placeholders.get(field, '')
                 if self.fields[field].required:
                     placeholder += ' *'  # Mark required fields

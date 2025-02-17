@@ -74,9 +74,10 @@
     <script src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js">
     </script>
     <script>
-        (function ($) {
-            window.fnames = new Array();
-            window.ftypes = new Array();
+        (function ($) { 
+            window.fnames = [];  // Replaced new Array() with []
+            window.ftypes = [];  // Replaced new Array() with []
+            
             fnames[0] = 'EMAIL';
             ftypes[0] = 'email';
             fnames[1] = 'FNAME';
@@ -89,7 +90,8 @@
             ftypes[4] = 'phone';
             fnames[5] = 'BIRTHDAY';
             ftypes[5] = 'birthday';
-        }(jQuery));
+        })(jQuery);
+
         var $mcj = jQuery.noConflict(true);
     </script>
 {% endblock %}

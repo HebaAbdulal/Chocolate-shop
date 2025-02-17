@@ -25,14 +25,23 @@
             <div class="col-12 col-md-6">
                 <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
+
                     {% for field in form %}
-                        {% if field.name != 'image' %}
+                        {% if field.name != 'image' and field.name != 'discount_percent' %}
                             {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
                         {% endif %}
                     {% endfor %}
-                    <div class="text-right">
+
+                    <!-- Fixed duplicate ID issue -->
+                    <label for="id_discount_percent_unique">Discount Percentage:</label>
+                    <input type="number" name="discount_percent" value="0.00" step="0.01"
+                           class="border-black rounded-0 numberinput form-control" required
+                           aria-describedby="hint_discount_percent" id="id_discount_percent_unique">
+                    <small id="hint_discount_percent" class="form-text text-muted">
+                        Discount percentage (e.g., 10 for 10%)
+                    </small>
+
+                    <div class="text-right mt-3">
                         <a class="btn btn-outline-brown rounded-0" href="{% url 'products' %}">Cancel</a>
                         <button class="btn btn-brown rounded-0" type="submit">Update Product</button>
                     </div>
@@ -44,10 +53,11 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
-        $('#new-image').change(function() {
+
+    <script>
+        $('#new-image').change(function() { 
             var file = $('#new-image')[0].files[0];
-            $('#filename').text(`Image will be set to: ${file.name}`);
+            $('#filename').text('Image will be set to: ' + file.name);
         });
     </script>
 {% endblock %}

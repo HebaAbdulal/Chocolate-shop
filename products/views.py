@@ -13,7 +13,7 @@ from django.utils import timezone
 
 def all_products(request):
     """ A view to show all products, including sorting and search queries """
-    
+
     # Start with all products
     products = Product.objects.all()
 
@@ -24,7 +24,7 @@ def all_products(request):
     price_max = request.GET.get('price_max')
     rating_max = request.GET.get('rating_max')
     rating_min = request.GET.get('rating_min')
-    
+
     # Initialize query with a default value
     query = request.GET.get('q', '')
 
@@ -35,7 +35,7 @@ def all_products(request):
 
     # Category filtering logic
     if category_filter:
-        categories = category_filter.split(',')  # Assuming multiple categories can be selected
+        categories = category_filter.split(',')
         products = products.filter(category__name__in=categories)
 
     # Price filtering logic
@@ -45,21 +45,21 @@ def all_products(request):
             products = products.filter(price__gte=price_min)
         except ValueError:
             messages.error(request, "Invalid minimum price provided.")
-    
+
     if price_max:
         try:
             price_max = float(price_max)  # Ensure price_max is a float
             products = products.filter(price__lte=price_max)
         except ValueError:
             messages.error(request, "Invalid maximum price provided.")
-    
+
     # Rating filtering logic
     if rating_min:
         try:
             products = products.filter(rating__gte=float(rating_min))
         except ValueError:
             messages.error(request, "Invalid minimum rating provided.")
-    
+
     if rating_max:
         try:
             products = products.filter(rating__lte=float(rating_max))
@@ -92,7 +92,7 @@ def all_products(request):
         'rating_max': rating_max,
         'rating_min': rating_min,
         'search_term': query,  # Pass the query safely
-        'categories': Category.objects.all(),  # Pass all categories for the filter dropdown
+        'categories': Category.objects.all(),
     }
 
     return render(request, 'products/products.html', context)
@@ -105,11 +105,11 @@ def product_detail(request, product_id):
 
     # Check if the user has purchased the product
     has_purchased = (
-    OrderLineItem.objects.filter(
-        order__user_profile__user=request.user,  # Ensure this matches your model relationships
-        product=product
-    ).exists()
-    if request.user.is_authenticated else False
+        OrderLineItem.objects.filter(
+            order__user_profile__user=request.user,
+            product=product
+        ).exists()
+        if request.user.is_authenticated else False
     )
 
     # Handle review form submission
@@ -121,7 +121,7 @@ def product_detail(request, product_id):
             review = form.save(commit=False)
             review.product = product
             review.user = request.user
-            review.status = 'approved'  # Optional: Mark as pending for moderation
+            review.status = 'approved'
             review.save()
             messages.success(request, "Your review has been submitted!")
             return redirect('product_detail', product_id=product.id)
@@ -152,10 +152,15 @@ def add_product(request):
             messages.success(request, 'Successfully added product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            # Print the form errors for debugging purposes
+            print(form.errors)  # This will print any form validation errors
+            messages.error(
+                request,
+                'Failed to add product. Please ensure the form is valid.'
+            )
     else:
         form = ProductForm()
-        
+
     template = 'products/add_product.html'
     context = {
         'form': form,
@@ -179,7 +184,10 @@ def edit_product(request, product_id):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product_detail', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(
+                request,
+                "Failed to update product. Please ensure the form is valid.")
+
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -219,22 +227,29 @@ def view_wishlist(request):
         'products': page_products,  # Pass the paginated products
     }
     paginated_products = paginator.get_page(page_number)
-    return render(request, 'products/wishlist/view_wishlist.html', {'products': paginated_products})
+    return render(
+        request,
+        "products/wishlist/view_wishlist.html",
+        {"products": paginated_products},
+        )
+
 
 @login_required
 def add_to_wishlist(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     wishlist, created = Wishlist.objects.get_or_create(user=request.user)
-    
+
     # Add the product to the wishlist
     if product in wishlist.products.all():
         messages.info(request, f"{product.name} is already in your wishlist.")
     else:
         wishlist.products.add(product)
-        messages.success(request, f"{product.name} has been added to your wishlist!")
-    
-    # Redirect to the products page to avoid navigating away
+        messages.success(
+            request, f"{product.name} has been added to your wishlist!"
+        )
+
     return redirect('products')  # Use the name of the products page URL
+
 
 @login_required
 def remove_from_wishlist(request, product_id):
@@ -248,7 +263,7 @@ def remove_from_wishlist(request, product_id):
 def add_to_bag(request, product_id):
     """ Add a quantity of the specified product to the shopping bag """
     product = get_object_or_404(Product, pk=product_id)
-    bag = request.session.get('bag', {})  # Retrieve the shopping bag from the session
+    bag = request.session.get('bag', {})
 
     # Add product to the bag
     if product_id in bag:
@@ -269,8 +284,11 @@ def submit_review(request, product_id):
         review_text = request.POST['review_text']
 
         # Check if the user has already purchased the product
-        if not has_purchased_product(request.user, product):  # Define this check based on your order logic
-            messages.error(request, "You can only review products you have purchased.")
+        if not has_purchased_product(request.user, product):
+            messages.error(
+                request,
+                "You can only review products you have purchased."
+            )
             return redirect('product_detail', product_id=product.id)
 
         # Create the review (pending approval)
@@ -279,7 +297,10 @@ def submit_review(request, product_id):
             product=product,
             review_text=review_text,
         )
-        messages.success(request, "Your review has been submitted and is awaiting approval.")
+        messages.success(
+            request,
+            "Your review has been submitted and is awaiting approval."
+        )
         return redirect('product_detail', product_id=product.id)
 
     return render(request, 'product_detail.html', {'product': product})
@@ -292,6 +313,8 @@ def calculate_discounted_price(product):
     )
     if category_discounts.exists():
         discount = category_discounts.first()
-        discounted_price = product.price * (1 - discount.discount_percentage / 100)
+        discounted_price = (
+        product.price * (1 - discount.discount_percentage / 100)
+        )
         return round(discounted_price, 2)
     return product.price

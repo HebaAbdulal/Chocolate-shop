@@ -31,17 +31,23 @@
                 <h3>Customer Reviews</h3>
                 <ul class="list-unstyled">
                     {% if reviews %}
+                    <li>
                         <h2>Reviews</h2>
-                        <ul>
-                            {% for review in reviews %}
-                                <div class="review">
-                                    <strong>{{ review.user.username }}</strong> 
-                                    <p>{{ review.review_text }}</p>
-                                </div>
-                            {% endfor %}
-                        </ul>
+                    </li>
+                    <ul>
+                        {% for review in reviews %}
+                        <li>
+                            <div class="review">
+                                <strong>{{ review.user.username }}</strong> 
+                                <p>{{ review.review_text }}</p>
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
                     {% else %}
+                    <li>
                         <p>No reviews yet for this product.</p>
+                    </li>
                     {% endif %}
                 </ul>
                 <!-- Review Form -->
@@ -136,12 +142,13 @@
                                 </a>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
 
 {% block postloadjs %}

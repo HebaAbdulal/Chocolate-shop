@@ -3,11 +3,11 @@
         "model": "products.product",
         "pk": 1,
         "fields": {
-            "name": "Milk Chocolate Bar",
-            "description": "Rich and creamy milk chocolate bar.",
-            "price": 2.50,
+            "name": "Milkybar white chocolates",
+            "description": "Deliciously creamy Milkybar white chocolate buttons in a giant tube. Each tube contains 80g. Milkybar still maintains strong milk credentials today and its simple, uncomplicated recipe is loved by both kids and adults alike.",
+            "price": 5,
             "category": 7,
-            "image_url": "/media/1.jpg",
+            "image_url": "/media/5.jpg",
             "rating": 4.5,
             "sku": "SKU001"
         }
@@ -16,11 +16,11 @@
         "model": "products.product",
         "pk": 2,
         "fields": {
-            "name": "Dark Chocolate Truffles",
+            "name": "Dark Chocolate Bar",
             "description": "Decadent dark chocolate truffles.",
             "price": 3.00,
             "category": 6,
-            "image_url": "/media/2.jpg",
+            "image_url": "/media/18.jpg",
             "rating": 4.7,
             "sku": "SKU002"
         }
@@ -29,7 +29,7 @@
         "model": "products.product",
         "pk": 3,
         "fields": {
-            "name": "White Chocolate Bar",
+            "name": "Tablet White",
             "description": "Smooth and creamy white chocolate.",
             "price": 2.75,
             "category": 8,
@@ -42,7 +42,7 @@
         "model": "products.product",
         "pk": 4,
         "fields": {
-            "name": "Ruby Chocolate Bites",
+            "name": "Ruby chocolate",
             "description": "Exquisite ruby chocolate with a fruity flavor.",
             "price": 3.50,
             "category": 9,
@@ -55,11 +55,11 @@
         "model": "products.product",
         "pk": 5,
         "fields": {
-            "name": "Fruity Chocolate",
+            "name": "Assorted Fruit Center",
             "description": "Delicious fruity chocolate.",
             "price": 2.75,
             "category": 10,
-            "image_url": "/media/34.png",
+            "image_url": "/media/5.png",
             "rating": 4.2,
             "sku": "SKU005"
         }
@@ -72,9 +72,9 @@
             "description": "Delicious dark chocolate blended with large roasted and caramelized hazelnuts from Piedmont.",
             "price": 2.75,
             "category": 11,
-            "image_url": "/media/32.jpg",
+            "image_url": "/media/6.png",
             "rating": 4.2,
-            "sku": "SKU005"
+            "sku": "SKU006"
         }
     },
     {   
@@ -85,22 +85,22 @@
             "description": " Smooth chocolate, encasing a rich, buttery caramel center that melts in your mouth with every bite.",
             "price": 2.75,
             "category": 12,
-            "image_url": "/media/40.png",
+            "image_url": "/media/7.png",
             "rating": 4.2,
-            "sku": "SKU005"
+            "sku": "SKU007"
         }
     },
     {   
         "model": "products.product",
         "pk": 8,
         "fields": {
-            "name": "Mint & Herbal Chocolate",
+            "name": "Carry Me Away Mints",
             "description": " Smooth chocolate, encasing a rich, buttery caramel center that melts in your mouth with every bite.",
             "price": 2.75,
             "category": 13,
-            "image_url": "/media/41.png",
+            "image_url": "/media/8.png",
             "rating": 4.2,
-            "sku": "SKU005"
+            "sku": "SKU012"
         }
     },
     {   
@@ -111,35 +111,35 @@
             "description": "Delicious sugar-free chocolate for the health-conscious.",
             "price": 2.75,
             "category": 15,
-            "image_url": "/media/5.jpg",
+            "image_url": "/media/11.jpg",
             "rating": 4.2,
-            "sku": "SKU005"
+            "sku": "SKU010"
         }
     },
     {   
         "model": "products.product",
         "pk": 10,
         "fields": {
-            "name": "Vegan Dark Chocolate",
+            "name": "KAKOA Vegan Chocolate",
             "description": "Rich dark chocolate made without any animal products.",
             "price": 3.25,
             "category": 14,
-            "image_url": "/media/18.jpg",
+            "image_url": "/media/9.jpg",
             "rating": 4.4,
-            "sku": "SKU006"
+            "sku": "SKU008"
         }
     },
     {   
         "model": "products.product",
         "pk": 11,
         "fields": {
-            "name": "Gluten-Free Chocolate Bar",
+            "name": "Russell Stover Sugar-Free Assorted Chocolates",
             "description": "Tasty chocolate bar made without gluten ingredients.",
             "price": 3.00,
             "category": 16,
-            "image_url": "/media/6.jpg",
+            "image_url": "/media/10.png",
             "rating": 4.3,
-            "sku": "SKU007"
+            "sku": "SKU009"
         }
     },
     {   
@@ -152,7 +152,7 @@
             "category": 18,
             "image_url": "/media/13.jpg",
             "rating": 4.9,
-            "sku": "SKU008"
+            "sku": "SKU011"
         }
     },
     {   
@@ -163,9 +163,9 @@
             "description": "A romantic box of assorted chocolates for your loved one.",
             "price": 25.00,
             "category": 19,
-            "image_url": "/media/7.jpg",
+            "image_url": "/media/14.jpg",
             "rating": 5.0,
-            "sku": "SKU009"
+            "sku": "SKU0013"
         }
     },
     {   
@@ -176,9 +176,9 @@
             "description": "Premium chocolates packaged for corporate gifting.",
             "price": 30.00,
             "category": 20,
-            "image_url": "/media/30.jpg",
+            "image_url": "/media/16.jpg",
             "rating": 4.7,
-            "sku": "SKU010"
+            "sku": "SKU014"
         }
     },
     {   
@@ -189,7 +189,7 @@
             "description": "A beautiful gift box filled with assorted chocolates.",
             "price": 20.00,
             "category": 17,
-            "image_url": "/media/9.jpg",
+            "image_url": "/media/34.png",
             "rating": 4.6,
             "sku": "SKU011"
         }

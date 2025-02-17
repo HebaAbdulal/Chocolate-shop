@@ -36,6 +36,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
+    '8000-hebaabdulal-chocolatesh-e2tzko10g3e.ws-eu117.gitpod.io',
     '8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
     'https://8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
     'sweetbite-b43a4ae6b9be.herokuapp.com', 'localhost'
@@ -46,6 +47,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000',
     'https://8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
     'https://sweetbite-b43a4ae6b9be.herokuapp.com',
+    'https://8000-hebaabdulal-chocolatesh-e2tzko10g3e.ws-eu117.gitpod.io',
 ]
 
 
@@ -68,7 +70,7 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
 
-    #other
+    # other
     'crispy_forms',
     'storages',
 ]
@@ -154,7 +156,6 @@ else:
     }
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -227,7 +228,7 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-if 'DEVELOPMENT' in os.environ:
+if os.environ.get("DEVELOPMENT") == "True":
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -237,7 +238,12 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-    
+
+    if not EMAIL_HOST_USER or not EMAIL_HOST_PASSWORD:
+        raise ValueError(
+            "🚨 EMAIL_HOST_USER and EMAIL_HOST_PASS must be set in production!"
+        )
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
@@ -254,4 +260,3 @@ LOGGING = {
         'level': 'DEBUG',
     },
 }
-

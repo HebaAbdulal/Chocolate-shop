@@ -1,40 +1,40 @@
 <script>
     $(document).ready(function() {
 
-        function updateButtonStates(itemId) {
-            // Update button states based on current value
-            const currentValue = parseInt($(`.id_qty_${itemId}`).val());
-            $(`.decrement-qty_${itemId}`).prop('disabled', currentValue <= 1);
-            $(`.increment-qty_${itemId}`).prop('disabled', currentValue >= 99);
-        }
+function updateButtonStates(itemId) {
+    // Update button states based on current value
+    var currentValue = parseInt($('.id_qty_' + itemId).val()); // Replaced template literal with string concatenation
+    $('.decrement-qty_' + itemId).prop('disabled', currentValue <= 1);
+    $('.increment-qty_' + itemId).prop('disabled', currentValue >= 99);
+}
 
-        // Initialize button states for all quantity inputs
-        $('.qty_input').each(function() {
-            updateButtonStates($(this).data('item_id'));
-        });
+// Initialize button states for all quantity inputs
+$('.qty_input').each(function() {
+    updateButtonStates($(this).data('item_id'));
+});
 
-        // Handle input change to update button states
-        $('.qty_input').on('change', function() {
-            updateButtonStates($(this).data('item_id'));
-        });
+// Handle input change to update button states
+$('.qty_input').on('change', function() {
+    updateButtonStates($(this).data('item_id'));
+});
 
-        // Increment quantity
-        $('.increment-qty').on('click', function(e) {
-            e.preventDefault();
-            const itemId = $(this).data('item_id');
-            const $input = $(`.id_qty_${itemId}`);
-            const newValue = parseInt($input.val()) + 1;
-            $input.val(newValue).trigger('change');
-        });
+// Increment quantity
+$('.increment-qty').on('click', function(e) {
+    e.preventDefault();
+    var itemId = $(this).data('item_id');
+    var $input = $('.id_qty_' + itemId); // Replaced template literal with string concatenation
+    var newValue = parseInt($input.val()) + 1;
+    $input.val(newValue).trigger('change');
+});
 
-        // Decrement quantity
-        $('.decrement-qty').on('click', function(e) {
-            e.preventDefault();
-            const itemId = $(this).data('item_id');
-            const $input = $(`.id_qty_${itemId}`);
-            const newValue = parseInt($input.val()) - 1;
-            $input.val(newValue).trigger('change');
-        });
+// Decrement quantity
+$('.decrement-qty').on('click', function(e) {
+    e.preventDefault();
+    var itemId = $(this).data('item_id');
+    var $input = $('.id_qty_' + itemId); // Replaced template literal with string concatenation
+    var newValue = parseInt($input.val()) - 1;
+    $input.val(newValue).trigger('change');
+});
 
-    });
+});
 </script>

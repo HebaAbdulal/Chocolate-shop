@@ -24,18 +24,67 @@
                     <div class="card-body order-confirmation-wrapper p-4">
                         <h5 class="text-muted">Add a Product</h5>
                         <hr>
-                        <div class="row">
-                            <div class="col-12 col-md-6 text-brown">
-                                <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
-                                    {% csrf_token %}
-                                    {{ form | crispy }}
-                                    <div>
-                                        <a class="btn btn-outline-brown rounded-0 text-brown" href="{% url 'products' %}">Cancel</a>
-                                        <button class="btn btn-brown rounded-0" type="submit">Add Product</button>
-                                    </div>
-                                </form>
-                            </div>            
-                        </div>
+                        <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <!-- Product Name -->
+                            <div class="form-group">
+                                <label for="id_name" class="requiredField">Product Name<span class="asteriskField">*</span></label>
+                                <div>
+                                    {{ form.name }}
+                                </div>
+                            </div>
+
+                            <!-- Product Category -->
+                            <div class="form-group">
+                                <label for="id_category" class="requiredField">Category<span class="asteriskField">*</span></label>
+                                <div>
+                                    {{ form.category }}
+                                </div>
+                            </div>
+
+                            <!-- Product Image (using the CustomClearableFileInput widget) -->
+                            <div class="form-group" id="div_id_image">
+                                <label for="new-image" class="">Image</label>
+                                <div>
+                                    <span class="btn btn-brown rounded-0 btn-file">
+                                        Select Image 
+                                        {{ form.image }}
+                                    </span>
+                                    <strong><span class="text-danger" id="filename"></span></strong>
+                                </div>
+                            </div>
+
+                            <!-- Product Price -->
+                            <div class="form-group">
+                                <label for="id_price" class="requiredField">Price<span class="asteriskField">*</span></label>
+                                <div>
+                                    {{ form.price }}
+                                </div>
+                            </div>
+
+                            <!-- Product Discount -->
+                            <div class="form-group" id="div_id_discount_percent">
+                                <label for="id_discount_percent" class="requiredField">Discount Percent<span class="asteriskField"></span></label>
+                                <div>
+                                    <input type="number" name="discount_percent" value="{{ form.discount_percent.value }}" class="border-black rounded-0 numberinput form-control" step="0.01" id="id_discount_percent">
+                                    <small id="id_discount_percent_helptext" class="form-text text-muted">Discount percentage (e.g., 10 for 10%).</small>
+                                </div>
+                            </div>
+
+                            <!-- Product Rating -->
+                            <div class="form-group" id="div_id_rating">
+                                <label for="id_rating" class="">Rating</label>
+                                <div>
+                                    {{ form.rating }}
+                                </div>
+                            </div>
+
+                            <!-- Submit and Cancel Buttons -->
+                            <div>
+                                <a class="btn btn-outline-brown rounded-0 text-brown" href="{% url 'products' %}">Cancel</a>
+                                <button class="btn btn-brown rounded-0" type="submit">Add Product</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -45,10 +94,11 @@
 
 {% block postloadjs %}
     {{ block.super }}
-    <script type="text/javascript">
-        $('#new-image').change(function() {
+    <script>
+        // JavaScript to show filename of selected image
+        $('#new-image').change(function() { 
             var file = $('#new-image')[0].files[0];
-            $('#filename').text(`Image will be set to: ${file.name}`);
+            $('#filename').text('Image will be set to: ' + file.name);  // Replaced template literal with string concatenation
         });
     </script>
 {% endblock %}
