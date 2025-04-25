@@ -36,7 +36,7 @@ DEBUG = 'DEVELOPMENT' in os.environ
 ALLOWED_HOSTS = [
     '127.0.0.1',
     'localhost',
-    '8000-hebaabdulal-chocolatesh-e2tzko10g3e.ws-eu117.gitpod.io',
+    '8000-hebaabdulal-chocolatesh-sbyl6tt4d2v.ws-eu118.gitpod.io',
     '8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
     'https://8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
     'sweetbite-b43a4ae6b9be.herokuapp.com', 'localhost'
@@ -47,7 +47,7 @@ CSRF_TRUSTED_ORIGINS = [
     'http://127.0.0.1:8000',
     'https://8000-hebaabdulal-chocolatesh-uy2oy5jftah.ws.codeinstitute-ide.net',
     'https://sweetbite-b43a4ae6b9be.herokuapp.com',
-    'https://8000-hebaabdulal-chocolatesh-e2tzko10g3e.ws-eu117.gitpod.io',
+    'https://8000-hebaabdulal-chocolatesh-sbyl6tt4d2v.ws-eu118.gitpod.io',
 ]
 
 
